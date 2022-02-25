@@ -1,9 +1,21 @@
-<h1>Lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://guiaderodas.com/wp-content/uploads/2018/05/cinema.jpg);">
+  <div class="container">
+    <h1>Create Lists</h1>
+    <p>Save to watch later</p>
+  </div>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="row" id="below_banner">
+  <h1>My Lists</h1>
+  <a class="btn btn-flat" href="lists/new">Create List</a>
+</div>
 
-<%= link_to "Create new List", new_list_path %>
+<div class="row">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn6.campograndenews.com.br/uploads/noticias/2021/01/13/brrfn9gsbsgz.jpg)">
+        <%= list.name %>
+      </div>
+    <% end %>
+  </div>
+</div>
